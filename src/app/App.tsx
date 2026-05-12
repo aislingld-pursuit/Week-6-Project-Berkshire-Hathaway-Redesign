@@ -13,8 +13,9 @@ import { Companies } from './components/Companies';
 import { Reports } from './components/Reports';
 import { OwnersManual } from './components/OwnersManual';
 import { BookValueChart } from './components/BookValueChart';
+import { CardComparison } from './components/comparison/CardComparison';
 
-type PageType = 'home' | 'letter' | 'shareholders' | 'companies' | 'reports' | 'owners-manual';
+type PageType = 'home' | 'letter' | 'shareholders' | 'companies' | 'reports' | 'owners-manual' | 'comparison';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
@@ -41,6 +42,10 @@ export default function App() {
 
   if (currentPage === 'owners-manual') {
     return <OwnersManual onNavigate={handleNavigate} />;
+  }
+
+  if (currentPage === 'comparison') {
+    return <CardComparison />;
   }
 
   return (
