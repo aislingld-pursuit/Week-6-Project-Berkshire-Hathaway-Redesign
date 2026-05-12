@@ -17,6 +17,9 @@ function figmaAssetResolver() {
 }
 
 export default defineConfig({
+  // Base path for GitHub Pages deployment
+  base: '/Week-6-Project-Berkshire-Hathaway-Redesign/',
+
   plugins: [
     figmaAssetResolver(),
     // The React and Tailwind plugins are both required for Make, even if
