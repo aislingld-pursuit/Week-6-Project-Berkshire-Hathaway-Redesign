@@ -1,0 +1,105 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Berkshire Hathaway Color Tokens - Light Mode */
+  --bg-page: #faf7f0;
+  --bg-surface: #f2ede1;
+  --ink-primary: #1a1612;
+  --ink-secondary: #5c554a;
+  --ink-tertiary: #6e6655;
+  --accent-navy: #0d2340;
+  --accent-gold: #6b4f23;
+  --rule-hairline: #d4cdb8;
+  --rule-strong: #1a1612;
+  --warn: #a8531a;
+  --focus: #0d2340;
+
+  /* Spacing Tokens (8-point grid) */
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+
+  /* Radius Tokens */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-none: 0px;
+
+  /* Typography */
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Source Serif 4', serif;
+  --font-numeric: 'Inter', sans-serif;
+}
+
+.dark {
+  /* Night Mode Colors (reading lamp mode) */
+  --bg-page: #14110c;
+  --bg-surface: #1d1a14;
+  --ink-primary: #e8dfc8;
+  --ink-secondary: #a89f88;
+  --ink-tertiary: #8a8272;
+  --accent-gold: #c9a86a;
+  --accent-navy: #5a8cc9;
+  --rule-hairline: #2e2a22;
+  --rule-strong: #e8dfc8;
+  --focus: #5a8cc9;
+}
+
+@theme inline {
+  /* Map to Tailwind color classes */
+  --color-bg-page: var(--bg-page);
+  --color-bg-surface: var(--bg-surface);
+  --color-ink-primary: var(--ink-primary);
+  --color-ink-secondary: var(--ink-secondary);
+  --color-ink-tertiary: var(--ink-tertiary);
+  --color-accent-navy: var(--accent-navy);
+  --color-accent-gold: var(--accent-gold);
+  --color-rule-hairline: var(--rule-hairline);
+  --color-rule-strong: var(--rule-strong);
+  --color-warn: var(--warn);
+  --color-focus: var(--focus);
+}
+
+@layer base {
+  * {
+    @apply outline-focus/50;
+  }
+
+  body {
+    @apply bg-bg-page text-ink-primary;
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 26px;
+  }
+
+  /* Typography Styles */
+  h1 {
+    font-family: var(--font-display);
+    font-size: 72px;
+    line-height: 76px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+  }
+}
